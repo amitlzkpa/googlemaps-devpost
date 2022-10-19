@@ -1,15 +1,15 @@
 // Initialize and add the map
 async function initMap() {
   // The map, centered at New York
-  const ny = { lat: 42.714, lng: -74.006 };
+  const ny = { lat: 40.714, lng: -74.006 };
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 12,
-    center: ny
+    center: ny,
   });
   // The marker, positioned at Uluru
   const marker = new google.maps.Marker({
     position: ny,
-    map: map
+    map: map,
   });
 
   const drawingManager = new google.maps.drawing.DrawingManager({
@@ -22,12 +22,12 @@ async function initMap() {
         google.maps.drawing.OverlayType.CIRCLE,
         google.maps.drawing.OverlayType.POLYGON,
         google.maps.drawing.OverlayType.POLYLINE,
-        google.maps.drawing.OverlayType.RECTANGLE
-      ]
+        google.maps.drawing.OverlayType.RECTANGLE,
+      ],
     },
     markerOptions: {
-      icon: "/images/heart.png",
-      width: 16
+      icon: "images/heart.png",
+      width: 16,
     },
     circleOptions: {
       fillColor: "#ffff00",
@@ -35,8 +35,8 @@ async function initMap() {
       strokeWeight: 5,
       clickable: false,
       editable: true,
-      zIndex: 1
-    }
+      zIndex: 1,
+    },
   });
 
   drawingManager.setMap(map);
